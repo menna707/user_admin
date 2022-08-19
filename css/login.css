@@ -1,0 +1,34 @@
+body 
+		{
+
+			background: DarkRed;
+		}
+		div
+		{
+             position:relative;
+			background: #808080;
+			top:150px; 
+			width: 430px;
+			height: 450px;
+		}
+		.in
+{
+position:relative;
+	display: block;
+height: 10%;
+width: 50%;
+  background-color:#FFFFF0;
+  font-size: 20px;
+  text-align: left;
+}
+.la
+
+{
+position:relative;
+font-size: 20px;
+text-align: left;
+color: #8B0000;
+font-family: Arial Black;
+}
+
+	

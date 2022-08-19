@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>login page</title>
+	<link rel="stylesheet" type="text/css" href="css/login.css?version=51">
+	<?php
+session_start();
+session_unset();
+session_destroy();
+
+	?>
+
+</head>
+<body>
+	<center>
+	<div>
+		<h1>log in  </h1>
+<form  action="php/process log in .php" method="POST">
+	
+	<label class="la">Email</label>
+	<input type="" name="email" placeholder="input the user name" class="in">
+	<br>
+	<label class="la">password</label>
+	<input type="password" name="password" placeholder="input pass" class="in">
+	<br>
+	<input type="submit" name="submit">
+</form>
+<a href="http://localhost/workfile/sign%20in%20.php?q=">i don't have an account ,sign in </a>
+	<br>
+	<a href="index.php"><button>back to main page</button></a>
+</center>
+</div>
+</body>
+</html>

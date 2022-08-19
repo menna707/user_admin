@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-16"/>
+<link rel="stylesheet" type="text/css" href="css/signin.css?version=51">
+	<title>sign in</title>
+	
+</head>
+<body>
+	<center>
+	<div>
+	<h1>sign in </h1>
+	
+	  <form action="php/process sign in .php" method="POST">
+		<label class="la">user name </label>
+		<input class="in" type="" name="user_name">
+<br>
+		<label class="la">birth date </label>
+		<input class="in" type="date" name="birth_date">
+<br>
+		<label class="la">user email </label>
+		<input class="in" type="" name="email">
+
+		<?php
+$q = $_GET['q'];
+if($q==1)
+{
+
+echo "email is not valid";
+
+}
+
+		?>
+<br>
+		<label class="la">phone number</label>
+		<input  class="in" type="" name="phone">
+<br>
+	  <label class="la">sex</label>
+		<br>
+		<label>male</label>
+		<input value="male" type="radio" name="sex" >
+		<label>female</label>
+		<input value="female" type="radio" name="sex" >
+		
+		
+		<br>
+		<label class="la">password</label>
+		<input class="in" type="password" name="password">
+		
+		<br>
+
+
+<input type="submit" name="submit">
+
+
+	  </form>
+	
+	
+	</div>
+	</center>
+</body>
+</html>

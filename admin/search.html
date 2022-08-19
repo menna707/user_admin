@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>search for users</title>
+</head>
+<body>
+	<form action="search.php?email=" method="GET">
+	
+<input type="" name="email">
+<input type="submit" name="send">
+</form>
+
+
+<?php
+error_reporting(0);
+ echo  $row['user_name'];?>
+
+<table border="1">
+	
+<tr>
+	<th>Id</th>
+	<th>user_name</th>
+	<th>birth_date</th>
+	<th>email</th>
+	<th>phone</th>
+	<th>sex</th>
+	<th>password</th>
+	<th>status</th>
+	<th>save</th>
+	<th>delete</th>
+
+</tr>
+<?php
+include ('../connect.php');
+
+
+
+
+	$email=$_GET['email'];
+$query = "SELECT * FROM sign_in  ";
+$result = $conn->query($query);
+while ($row = $result->fetch_assoc())
+{  
+
+
+
+?>
+
+
+
+
+
+<tr>
+	<td><?php echo $row['sid'];?></td>
+	<td><?php echo $row['user_name'];?></td>
+	<td><?php echo $row['birth_date'];?></td>
+	<td><?php echo $row['email'];?></td>
+	<td><?php echo $row['phone'];?></td>
+	<td><?php echo $row['sex'];?></td>
+	<td><?php echo $row['password'];?></td>
+
+
+
+
+
+
+
+
+
+
+	<form action="fun/update.php" method="POST">
+<input type="hidden" name="id" value="<?php echo $row['sid'];?>">
+
+	<td>		
+<select name="status" >
+  <option value="<?php echo $row['status'];?>"><?php echo $row['status'];?></option>
+  <option value="user">user</option>
+  <option value="admin">admin</option>
+  <option value="employee">employee</option>
+  
+</select>
+	</td>
+	
+	<td>   <input type="submit" name="update" value="save"> </td>
+
+
+</form>
+
+
+<td><a href="fun/delete.php?id=<?php echo $row['sid'];?>">delete</a></td>
+
+</tr>
+
+
+<?php
+
+}
+?>
+
+
+</table>
+
+
+</body>
+</html>

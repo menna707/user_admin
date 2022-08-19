@@ -1,0 +1,165 @@
+<?php
+include ('connect.php');
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-16"/>
+	<link rel="stylesheet" type="text/css" href="css/index.css?version=52">
+	<title>Menna webSite</title>
+	<?php 
+	session_start();
+	?>
+</head>
+<body>
+	
+<center>	
+<h1>Welcome to Menna Website</h1>
+</center>
+<?php 
+if (isset($_SESSION['email']))
+{ 
+$s = $_SESSION['email'];
+
+$query = "SELECT * FROM sign_in  WHERE email = '$s'  ";
+$result = $conn->query($query);
+$row = $result->fetch_assoc();
+$status=$row['status'];
+
+
+echo "
+	<div >
+
+	<h2> welcome " . $row['user_name']."</h2>
+
+	</div>
+	";
+
+	
+echo $status;
+
+echo"<br>";
+
+
+echo gettype($status) ;
+
+
+
+
+if($status=='admin')
+{  
+?>
+<button class="bu2">
+
+<a href=
+
+"
+
+http://localhost/workfile/admin/ad.php
+
+"
+
+
+ >  your profile   </a>
+
+</button>
+
+<?php
+}
+?>
+
+
+<?php
+if($status=='user')
+{  
+?>
+<button class="bu2">
+
+<a href=
+
+"
+
+http://localhost/workfile/user/us.php
+
+"
+
+
+ >  your profile   </a>
+
+</button>
+
+<?php
+}
+?>
+
+
+<?php
+if($status=='employee')
+{  
+?>
+<button class="bu2">
+
+<a href=
+
+"
+
+http://localhost/workfile/employee/em.php
+
+"
+
+
+ >  your profile   </a>
+
+</button>
+
+<?php
+}
+?>
+
+
+
+
+
+<button class="bu2">
+<a href="http://localhost/workfile/login.php" >logout</a>
+</button>
+
+<br>
+
+
+<?php 
+}
+
+
+else
+
+{
+
+?>
+
+<button  class="bu">
+<a href="http://localhost/workfile/sign%20in%20.php?q=" target="_blank">signin</a>
+</button>
+<br>
+
+
+<button  class="bu">
+<a href="login.php" target="_blank" >login</a>
+</button>
+<br>
+
+<?php
+
+}
+?>
+<center>
+<img src="images\Untitled.jpg" alt="wrong in picture" title="programmer"></center>
+<p>
+	hello to our website
+	<br> this is actuallu my first website and i'm really excited to finish it ,i'm optimistic . thanks for visiting my website i hope you will enjoy it.
+</p>
+
+
+</body>
+</html>
